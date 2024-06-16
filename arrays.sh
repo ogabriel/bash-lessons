@@ -6,15 +6,17 @@ array+=(three)
 array+=("four five")
 
 function print_array() {
-    echo "count: ${#array[@]}"
+    local local_array=($@)
 
-    for i in "${!array[@]}"; do
-        echo "$i: ${array[$i]}"
+    echo "count: ${#local_array[@]}"
+
+    for i in "${!local_array[@]}"; do
+        echo "$i: ${local_array[$i]}"
     done
 }
 
-print_array
+print_array ${array[@]}
 
 unset array[1]
 
-print_array
+print_array ${array[@]}
