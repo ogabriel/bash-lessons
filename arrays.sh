@@ -1,7 +1,6 @@
 #!/bin/bash
 
 array=()
-
 array+=(one two)
 array+=(three)
 array+=("four five")
